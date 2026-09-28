@@ -10,6 +10,9 @@ updates:
         update-types:
           - minor
           - patch
+    commit-message:
+      prefix: chore
+      include: scope
   - package-ecosystem: github-actions
     directory: /
     schedule:
@@ -19,3 +22,6 @@ updates:
         update-types:
           - minor
           - patch
+    commit-message:
+      prefix: chore
+      include: scope
