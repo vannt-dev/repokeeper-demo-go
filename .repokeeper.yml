@@ -25,6 +25,3 @@ owned: []
 stack_options:
   docker:
     build: true
-github:
-  workflows:
-    ref: de665b1c32afe0877cf9e248f2c597cbaeca406a
