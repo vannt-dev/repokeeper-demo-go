@@ -4,6 +4,7 @@ standard: 1.4.4
 platform: github
 stacks:
   - go
+  - docker
 modules:
   editorconfig: true
   commits: true
@@ -13,6 +14,7 @@ modules:
   deps: true
   gitignore: true
   drift: false
+  security: true
   health:
     license: MIT
     copyright: 2026 Van Nguyen
@@ -20,4 +22,9 @@ modules:
     codeowners:
       - "@vannt-dev"
 owned: []
-stack_options: {}
+stack_options:
+  docker:
+    build: true
+github:
+  workflows:
+    ref: de665b1c32afe0877cf9e248f2c597cbaeca406a
