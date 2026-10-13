@@ -13,6 +13,18 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      docker-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+    commit-message:
+      prefix: chore
+      include: scope
   - package-ecosystem: github-actions
     directory: /
     schedule:
@@ -25,3 +37,5 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+    ignore:
+      - dependency-name: vannt-dev/repokeeper*

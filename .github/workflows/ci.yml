@@ -13,10 +13,15 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   commits:
-    uses: vannt-dev/repokeeper/.github/workflows/commitlint.yml@v0
+    uses: vannt-dev/repokeeper/.github/workflows/commitlint.yml@de665b1c32afe0877cf9e248f2c597cbaeca406a
   go:
-    uses: vannt-dev/repokeeper/.github/workflows/stack-go.yml@v0
+    uses: vannt-dev/repokeeper/.github/workflows/stack-go.yml@de665b1c32afe0877cf9e248f2c597cbaeca406a
     with:
       go-versions: '["stable"]'
       os: '["ubuntu-latest"]'
       commands: '["test -z \"$(gofmt -l .)\" || { gofmt -l .; exit 1; }","go vet ./...","go test ./..."]'
+  docker:
+    uses: vannt-dev/repokeeper/.github/workflows/stack-docker.yml@de665b1c32afe0877cf9e248f2c597cbaeca406a
+    with:
+      dockerfiles: '["Dockerfile"]'
+      build: "true"

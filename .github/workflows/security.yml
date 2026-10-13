@@ -1,0 +1,24 @@
+# Managed by repokeeper (https://github.com/vannt-dev/repokeeper). Edits are reported by `repokeeper check`. Keys and jobs you add yourself are left alone.
+
+name: security
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: 41 4 * * 3
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  codeql:
+    uses: vannt-dev/repokeeper/.github/workflows/codeql.yml@de665b1c32afe0877cf9e248f2c597cbaeca406a
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+    with:
+      languages: '[{"language":"go","build-mode":"autobuild"},{"language":"actions","build-mode":"none"}]'
