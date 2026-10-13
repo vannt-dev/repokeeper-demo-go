@@ -9,7 +9,7 @@ permissions:
   contents: read
 jobs:
   release:
-    uses: vannt-dev/repokeeper/.github/workflows/release-please.yml@de665b1c32afe0877cf9e248f2c597cbaeca406a
+    uses: vannt-dev/repokeeper/.github/workflows/release-please.yml@v0
     permissions:
       contents: write
       pull-requests: write

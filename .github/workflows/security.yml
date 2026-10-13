@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   codeql:
-    uses: vannt-dev/repokeeper/.github/workflows/codeql.yml@de665b1c32afe0877cf9e248f2c597cbaeca406a
+    uses: vannt-dev/repokeeper/.github/workflows/codeql.yml@v0
     permissions:
       security-events: write
       actions: read
