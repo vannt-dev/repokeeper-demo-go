@@ -21,3 +21,9 @@ modules:
       - "@vannt-dev"
 owned: []
 stack_options: {}
+github:
+  ci:
+    skip_when_only:
+      - "*.md"
+      - "docs/**"
+      - LICENSE
